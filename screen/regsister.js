@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { TextInput, Button, RadioButton, Checkbox } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
-import DateTimePicker from '@react-native-community/datetimepicker';
+
 
 
 const setfirstname = (firstname) => ({ type: 'SET_firstname', payload: firstname });
@@ -24,14 +24,7 @@ const setDegreeBE = (value) => ({ type: 'SET_DEGREE_BE', payload: value });
 
 function Register() {
     const dispatch = useDispatch();
-    const [showDatePicker, setShowDatePicker] = useState(false)
-    const handleDateChange = (event, selectedDate) => {
-        setShowDatePicker(false);
-        if (selectedDate) {
-            const date = selectedDate.toISOString().split('T')[0];  
-            dispatch(setDob(date));
-        }
-    };
+   
 
     const firstname = useSelector((state) => state.firstname);
     const lastname = useSelector((state) => state.lastname);
